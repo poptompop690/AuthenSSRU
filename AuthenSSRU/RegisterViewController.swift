@@ -47,7 +47,7 @@ class RegisterViewController: UIViewController {
         if (name.count == 0) || (user.count == 0) || (password.count == 0){
             myAlert(titleString: "Have Space", messageString: "Please Fill All Blank")
         } else{
-            
+          uploadDtat(name: name, user: user, password: password)
         }
         
         
@@ -68,7 +68,31 @@ class RegisterViewController: UIViewController {
     
     func uploadDtat(name: String,user: String,password: String) -> Void{
         
-        let uriString:String = "http://www.androidthai.in.th/snru/addDataMaster.php?isAdd=true&Name=\(name)&user=\(user)user&Password=\(password)"
+        let urlString:String = "http://www.androidthai.in.th/snru/addDataMaster.php?isAdd=true&Name=\(name)&user=\(user)user&Password=\(password)"
+        
+        let url = URL(string: urlString)
+        let request = NSMutableURLRequest(url: url!)
+        let task = URLSession.shared.dataTask(with:request as URLRequest){data,response,error in
+            
+            if error != nil{
+                print("error")
+            }else{
+                
+                if let testData = data{
+                    
+                    let canReadData = NSString(data: testData, encoding: String.Encoding.utf8.rawValue)
+                    print("canResd ==> \(String(describing: canReadData))")
+                    
+                }
+                
+            } //if1
+            
+            
+        }//end Task
+        task.resume()
+        
+        
+        
         
         
         
