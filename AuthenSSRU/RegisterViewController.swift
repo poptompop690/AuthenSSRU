@@ -68,7 +68,7 @@ class RegisterViewController: UIViewController {
     
     func uploadDtat(name: String,user: String,password: String) -> Void{
         
-        let urlString:String = "http://www.androidthai.in.th/snru/addDataMaster.php?isAdd=true&Name=\(name)&user=\(user)user&Password=\(password)"
+        let urlString:String = "https://www.androidthai.in.th/snru/addDataMaster.php?isAdd=true&Name=\(name)&user=\(user)user&Password=\(password)"
         
         let url = URL(string: urlString)
         let request = NSMutableURLRequest(url: url!)
