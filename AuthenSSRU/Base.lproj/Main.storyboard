@@ -203,6 +203,9 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="nameTextField" destination="8bg-4d-1t1" id="CuW-fz-ZMS"/>
+                        <outlet property="passwordTextField" destination="Z8d-am-1aF" id="htD-u9-7I7"/>
+                        <outlet property="userTextField" destination="7Bh-Zu-kXo" id="rcI-ld-iX8"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="BackMain" id="Erm-oO-a3W"/>
                     </connections>
                 </viewController>
